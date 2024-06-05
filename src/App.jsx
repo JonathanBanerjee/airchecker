@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { API_KEY, API_URL } from "../config";
+import { AIR_URL, API_KEY } from "../config";
 import "./css/App.css";
 
 function App() {
+  // API Call to OpenWeather AirQuality API
   const [air, setAir] = useState({ list: [] });
   useEffect(() => {
-    fetch(
-      `http://api.openweathermap.org/data/2.5/air_pollution?lat=50&lon=50&appid=${API_KEY}`
-    )
+    fetch(`${AIR_URL}lat=31.5204&lon=74.3587&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -17,6 +16,8 @@ function App() {
         console.log(err.message);
       });
   }, []);
+
+  // Display
   return (
     <>
       <div className="air-container">
@@ -39,7 +40,7 @@ function App() {
               <div className="components">
                 <h3 className="concentrations">Concentrations</h3>
                 <p className="airtile">
-                  Carbon Dioxide: {data.components.co} μg/m&sup3;
+                  Carbon monoxide: {data.components.co} μg/m&sup3;
                 </p>
                 <p className="airtile">
                   Nitrogen Monoxide: {data.components.no} μg/m&sup3;
