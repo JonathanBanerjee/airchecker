@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { AIR_URL, API_KEY } from "../config";
+import SearchLocation from "./components/searchLocation";
 import "./css/App.css";
 
 function App() {
-  // API Call to OpenWeather AirQuality API
-  const [air, setAir] = useState({ list: [] });
-  useEffect(() => {
-    fetch(`${AIR_URL}lat=31.5204&lon=74.3587&appid=${API_KEY}`)
+  const getAir = (lon = "74.3587", lat = "31.5204") => {
+    fetch(`${AIR_URL}lat=${lat}&lon=${lon}&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -15,11 +14,17 @@ function App() {
       .catch((err) => {
         console.log(err.message);
       });
+  };
+  // API Call to OpenWeather AirQuality API
+  const [air, setAir] = useState({ list: [] });
+  useEffect(() => {
+    getAir();
   }, []);
 
   // Display
   return (
     <>
+      <SearchLocation getAir={getAir} />
       <div className="air-container">
         {air.list.map((data, index) => {
           return (
