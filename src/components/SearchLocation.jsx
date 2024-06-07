@@ -2,16 +2,18 @@ import { useState, useEffect } from "react";
 import { API_KEY } from "../../config";
 import LocationListItem from "./LocationListItem.JSX";
 
-const SearchLocation = ({ getAir }) => {
+const SearchLocation = ({ getAir, getCity }) => {
   const [input, setInput] = useState("");
   const [list, setList] = useState([]);
+
   console.log(input);
 
   const handleClick = (index) => {
     //Deconstructing to get the lat and lon from the list.
     const { lon, lat, name } = list[index];
-    console.log(lon, lat, name);
-    getAir(lon, lat, name);
+    console.log(lon, lat);
+    getAir(lon, lat);
+    getCity(name);
   };
 
   useEffect(() => {
@@ -39,12 +41,15 @@ const SearchLocation = ({ getAir }) => {
       />
       <ul>
         {list.map((e, index) => (
-          <LocationListItem
-            city={e.name}
-            state={e.state}
-            index={index}
-            handleClick={handleClick}
-          />
+          <>
+            {console.log(e)}
+            <LocationListItem
+              city={e.name}
+              state={e.state}
+              index={index}
+              handleClick={handleClick}
+            />
+          </>
         ))}
       </ul>
     </>
