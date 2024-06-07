@@ -49,8 +49,8 @@ const CityDisplay = ({ city, air }) => {
                     </tr>
                     <tr>
                       <th scope="row">Nitrogen Monoxide</th>
+                      <td>{data.components.no} μg/m&sup3;</td>
                     </tr>
-                    <td>{data.components.no} μg/m&sup3;</td>
                   </tbody>
                 </table>
               </div>
