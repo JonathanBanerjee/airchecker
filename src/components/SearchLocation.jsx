@@ -9,9 +9,9 @@ const SearchLocation = ({ getAir }) => {
 
   const handleClick = (index) => {
     //Deconstructing to get the lat and lon from the list.
-    const { lon, lat } = list[index];
-    console.log(lon, lat);
-    getAir(lon, lat);
+    const { lon, lat, name } = list[index];
+    console.log(lon, lat, name);
+    getAir(lon, lat, name);
   };
 
   useEffect(() => {
