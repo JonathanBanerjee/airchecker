@@ -1,0 +1,65 @@
+.good {
+  background-color: var(--pico-color-green-600);
+  color: white;
+}
+
+.fair {
+  background-color: var(--pico-color-yellow-200);
+  color: white;
+}
+
+.moderate {
+  background-color: var(--pico-color-pumpkin-300);
+  color: white;
+}
+
+.poor {
+  background-color: var(--pico-color-orange-600);
+  color: white;
+}
+
+.verypoor {
+  background-color: var(--pico-color-red-800);
+  color: white;
+}
+
+@media screen and (max-width: 868px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+body {
+  line-height: 1.25;
+}/*# sourceMappingURL=styles.css.map */

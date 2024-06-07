@@ -30,7 +30,13 @@ const SearchLocation = ({ getAir }) => {
   }, [input]);
   return (
     <>
-      <input type="text" onChange={(e) => setInput(e.target.value)} />
+      <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Search for a location"
+        onChange={(e) => setInput(e.target.value)}
+      />
       <ul>
         {list.map((e, index) => (
           <LocationListItem

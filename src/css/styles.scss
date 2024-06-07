@@ -1,0 +1,78 @@
+$good-header: var(--pico-color-green-600);
+$fair-header: var(--pico-color-yellow-200);
+$moderate-header: var(--pico-color-pumpkin-300);
+$poor-header: var(--pico-color-orange-600);
+$verypoor-header: var(--pico-color-red-800);
+
+.good {
+  background-color: $good-header;
+  color: white;
+}
+
+.fair {
+  background-color: $fair-header;
+  color: white;
+}
+
+.moderate {
+  background-color: $moderate-header;
+  color: white;
+}
+
+.poor {
+  background-color: $poor-header;
+  color: white;
+}
+
+.verypoor {
+  background-color: $verypoor-header;
+  color: white;
+}
+
+@media screen and (max-width: 868px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+body {
+  line-height: 1.25;
+}
