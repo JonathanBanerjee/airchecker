@@ -1,3 +1,11 @@
+import {
+  carbonmonoxidecolour,
+  nitrogendioxidecolour,
+  ozonecolour,
+  sulphurdioxidecolour,
+  fineparticlesmattercolour,
+  coarseparticulatemattercolour,
+} from "../utils/colourCoding";
 const CityDisplay = ({ city, air }) => {
   return (
     <>
@@ -20,27 +28,61 @@ const CityDisplay = ({ city, air }) => {
                   <tbody>
                     <tr>
                       <th scope="row">Carbon Monoxide</th>
-                      <td>{data.components.co} μg/m&sup3;</td>
+                      <td
+                        className={`carbonmonoxide ${carbonmonoxidecolour(
+                          data.components.co
+                        )}`}
+                      >
+                        {data.components.co} μg/m&sup3;
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">Nitrogen Dioxide</th>
-                      <td>{data.components.no2} μg/m&sup3;</td>
+                      <td
+                        className={`nitrogendioxide ${nitrogendioxidecolour(
+                          data.components.no2
+                        )}`}
+                      >
+                        {data.components.no2} μg/m&sup3;
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">Ozone</th>
-                      <td>{data.components.o3} μg/m&sup3;</td>
+                      <td
+                        className={`ozone ${ozonecolour(data.components.o3)}`}
+                      >
+                        {data.components.o3} μg/m&sup3;
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">Sulphur Dioxide</th>
-                      <td>{data.components.so2} μg/m&sup3;</td>
+                      <td
+                        className={`sulphurdioxide ${sulphurdioxidecolour(
+                          data.components.so2
+                        )}`}
+                      >
+                        {data.components.so2} μg/m&sup3;
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">Fine Particles Matter</th>
-                      <td>{data.components.pm2_5}</td>
+                      <td
+                        className={`fineparticlesmatter ${fineparticlesmattercolour(
+                          data.components.pm2_5
+                        )}`}
+                      >
+                        {data.components.pm2_5}
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">Coarse Particles Matter</th>
-                      <td>{data.components.pm10} μg/m&sup3;</td>
+                      <td
+                        className={`coarseparticlesmatter ${coarseparticulatemattercolour(
+                          data.components.pm10
+                        )}`}
+                      >
+                        {data.components.pm10} μg/m&sup3;
+                      </td>
                     </tr>
 
                     <tr>
@@ -54,6 +96,11 @@ const CityDisplay = ({ city, air }) => {
                   </tbody>
                 </table>
               </div>
+              <p>
+                Note: Ammonia and Nitrogen Monoxide do not have an affect on the
+                air quality index. NH3: min value 0.1 - max value 200 NO: min
+                value 0.1 - max value 100{" "}
+              </p>
             </>
           );
         })}
