@@ -99,7 +99,7 @@ const CityDisplay = ({ city, air }) => {
               <p>
                 Note: Ammonia and Nitrogen Monoxide do not have an affect on the
                 air quality index. NH3: min value 0.1 - max value 200 NO: min
-                value 0.1 - max value 100{" "}
+                value 0.1 - max value 100.{" "}
               </p>
             </>
           );
