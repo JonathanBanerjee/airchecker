@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { API_KEY } from "../../config";
-import LocationListItem from "./LocationListItem.JSX";
+import LocationListItem from "./LocationListItem.jsx";
 
 const SearchLocation = ({ getAir, getCity }) => {
   const [input, setInput] = useState("");
