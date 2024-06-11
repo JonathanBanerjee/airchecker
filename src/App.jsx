@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AIR_URL, API_KEY } from "../config";
-import SearchLocation from "./components/searchLocation";
+import SearchLocation from "./components/SearchLocation";
 // import "./css/App.css";
 import "./css/styles.css";
 import KeyTable from "./components/KeyTable";
