@@ -13,7 +13,7 @@ function App() {
     setCity(e);
   };
 
-  const getAir = (lon = "74.3587", lat = "31.5204") => {
+  const getAir = (lon, lat) => {
     fetch(`${AIR_URL}lat=${lat}&lon=${lon}&appid=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
@@ -25,11 +25,7 @@ function App() {
   };
   // API Call to OpenWeather AirQuality API
   const [air, setAir] = useState({ list: [] });
-  useEffect(() => {
-    getAir();
-  }, []);
 
-  // Display
   return (
     <>
       {/* Passing reference down as a prop */}

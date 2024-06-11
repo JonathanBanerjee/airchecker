@@ -87,3 +87,17 @@ export const coarseparticulatemattercolour = (value) => {
     return "verypoor";
   }
 };
+
+export const overallcolour = (value) => {
+  if (value == 1) {
+    return "good";
+  } else if (value == 2) {
+    return "fair";
+  } else if (value == 3) {
+    return "moderate";
+  } else if (value == 4) {
+    return "poor";
+  } else if (value == 5) {
+    return "verypoor";
+  }
+};

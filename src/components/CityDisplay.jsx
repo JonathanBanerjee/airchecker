@@ -5,6 +5,7 @@ import {
   sulphurdioxidecolour,
   fineparticlesmattercolour,
   coarseparticulatemattercolour,
+  overallcolour,
 } from "../utils/colourCoding";
 const CityDisplay = ({ city, air }) => {
   return (
@@ -14,9 +15,11 @@ const CityDisplay = ({ city, air }) => {
           return (
             <>
               <div className="air-card" key={index}>
-                <h2 className="air-title">
-                  Overall Air Quality for {city} : {data.main.aqi}
-                </h2>
+                <h2 className="air-title">Overall Air Quality for {city} :</h2>
+                <h3 className={`air-subheader ${overallcolour(data.main.aqi)}`}>
+                  {data.main.aqi}
+                </h3>
+
                 <h3>Concentrations</h3>
                 <table>
                   <thead>
