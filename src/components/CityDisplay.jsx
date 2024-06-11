@@ -36,7 +36,7 @@ const CityDisplay = ({ city, air }) => {
                           data.components.co
                         )}`}
                       >
-                        {data.components.co} μg/m&sup3;
+                        {data.components.co}
                       </td>
                     </tr>
                     <tr>
@@ -46,7 +46,7 @@ const CityDisplay = ({ city, air }) => {
                           data.components.no2
                         )}`}
                       >
-                        {data.components.no2} μg/m&sup3;
+                        {data.components.no2}
                       </td>
                     </tr>
                     <tr>
@@ -54,7 +54,7 @@ const CityDisplay = ({ city, air }) => {
                       <td
                         className={`ozone ${ozonecolour(data.components.o3)}`}
                       >
-                        {data.components.o3} μg/m&sup3;
+                        {data.components.o3}
                       </td>
                     </tr>
                     <tr>
@@ -64,7 +64,7 @@ const CityDisplay = ({ city, air }) => {
                           data.components.so2
                         )}`}
                       >
-                        {data.components.so2} μg/m&sup3;
+                        {data.components.so2}
                       </td>
                     </tr>
                     <tr>
@@ -84,17 +84,17 @@ const CityDisplay = ({ city, air }) => {
                           data.components.pm10
                         )}`}
                       >
-                        {data.components.pm10} μg/m&sup3;
+                        {data.components.pm10}
                       </td>
                     </tr>
 
                     <tr>
                       <th scope="row">Ammonia</th>
-                      <td>{data.components.nh3} μg/&sup3;</td>
+                      <td>{data.components.nh3} </td>
                     </tr>
                     <tr>
                       <th scope="row">Nitrogen Monoxide</th>
-                      <td>{data.components.no} μg/m&sup3;</td>
+                      <td>{data.components.no} </td>
                     </tr>
                   </tbody>
                 </table>
