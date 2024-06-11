@@ -52,7 +52,7 @@ const KeyTable = () => {
             <td className="moderate">Moderate</td>
             <td data-label="Overall Rating">3</td>
             <td data-label="Carbon Monoxide &#40; μg/m &sup3;&#41;">
-              94000-12400
+              9400-12400
             </td>
             <td data-label="Nitrogen Dioxide &#40;μg/m &sup3;&#41;">70-150</td>
             <td data-label="Ozone &#40;μg/m &sup3;&#41;">100-140</td>
