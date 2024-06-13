@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { API_KEY } from "../../config";
-import LocationListItem from "./LocationListItem.jsx";
+import LocationListItem from "./LocationListItem.JSX";
 
 const SearchLocation = ({ getAir, getPlaceInfo }) => {
   const [input, setInput] = useState("");
@@ -8,11 +8,6 @@ const SearchLocation = ({ getAir, getPlaceInfo }) => {
   const [displayList, setDisplayList] = useState(true);
 
   console.log(input);
-
-  // const handleListClick = (index) => {
-  //   setDisplayList(false);
-  //   console.log(`Item at index ${index} clicked`);
-  // };
 
   const handleClick = (index) => {
     //Deconstructing to get the lat and lon from the list.

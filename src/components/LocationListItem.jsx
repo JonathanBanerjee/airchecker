@@ -4,7 +4,7 @@ const LocationListItem = ({ city, state, country, index, handleClick }) => {
       <li onClick={() => handleClick(index)}>{` ${city}, ${
         state ? state : ``
       }, ${country}
-      `}</li>
+        `}</li>
     </>
   );
 };

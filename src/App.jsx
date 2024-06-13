@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AIR_URL, API_KEY } from "../config";
 
-import SearchLocation from "./components/searchLocation.jsx";
+import SearchLocation from "./components/searchLocation";
 // import "./css/App.css";
 import "./css/styles.css";
 import KeyTable from "./components/KeyTable";
