@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AIR_URL, API_KEY } from "../config";
-import SearchLocation from "./components/SearchLocation";
+
+import SearchLocation from "./components/searchLocation";
 // import "./css/App.css";
 import "./css/styles.css";
 import KeyTable from "./components/KeyTable";
@@ -8,9 +9,13 @@ import CityDisplay from "./components/CityDisplay";
 
 function App() {
   const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
 
-  const getCity = (e) => {
-    setCity(e);
+  const getPlaceInfo = (name, state, country) => {
+    setCity(name);
+    setState(state);
+    setCountry(country);
   };
 
   const getAir = (lon, lat) => {
@@ -29,8 +34,8 @@ function App() {
   return (
     <>
       {/* Passing reference down as a prop */}
-      <SearchLocation getAir={getAir} getCity={getCity} />
-      <CityDisplay city={city} air={air} />
+      <SearchLocation getAir={getAir} getPlaceInfo={getPlaceInfo} />
+      <CityDisplay city={city} state={state} country={country} air={air} />
       <KeyTable />
     </>
   );

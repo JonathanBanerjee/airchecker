@@ -79,11 +79,12 @@ body {
 
 ul li {
   list-style-type: none;
+  color: white;
 }
 
-// ul li:hover {
-//   background: red;
-// }
+ul li:hover {
+  background-color: #006ba6;
+}
 
 .air-subheader {
   display: flex;

@@ -7,7 +7,7 @@ import {
   coarseparticulatemattercolour,
   overallcolour,
 } from "../utils/colourCoding";
-const CityDisplay = ({ city, air }) => {
+const CityDisplay = ({ city, state, country, air }) => {
   return (
     <>
       <div className="air-container">
@@ -15,7 +15,11 @@ const CityDisplay = ({ city, air }) => {
           return (
             <>
               <div className="air-card" key={index}>
-                <h2 className="air-title">Overall Air Quality for {city}:</h2>
+                <h2 className="air-title">
+                  Overall Air Quality for: {city}, {""}
+                  {state && `${state}`}, {""}
+                  {country && `${country}`}
+                </h2>
                 <h3 className={`air-subheader ${overallcolour(data.main.aqi)}`}>
                   {data.main.aqi}
                 </h3>

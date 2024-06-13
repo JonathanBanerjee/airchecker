@@ -2,24 +2,30 @@ import { useState, useEffect } from "react";
 import { API_KEY } from "../../config";
 import LocationListItem from "./LocationListItem.jsx";
 
-const SearchLocation = ({ getAir, getCity }) => {
+const SearchLocation = ({ getAir, getPlaceInfo }) => {
   const [input, setInput] = useState("");
   const [list, setList] = useState([]);
   const [displayList, setDisplayList] = useState(true);
 
   console.log(input);
 
-  const handleListClick = (index) => {
-    setDisplayList(false);
-    console.log(`Item at index ${index} clicked`);
-  };
+  // const handleListClick = (index) => {
+  //   setDisplayList(false);
+  //   console.log(`Item at index ${index} clicked`);
+  // };
 
   const handleClick = (index) => {
     //Deconstructing to get the lat and lon from the list.
-    const { lon, lat, name } = list[index];
+    const { lon, lat, name, state, country } = list[index];
     console.log(lon, lat);
     getAir(lon, lat);
-    getCity(name);
+    getPlaceInfo(name, state, country);
+    setDisplayList(false);
+  };
+
+  const inputHandler = (input) => {
+    setDisplayList(true);
+    setInput(input);
   };
 
   useEffect(() => {
@@ -43,22 +49,25 @@ const SearchLocation = ({ getAir, getCity }) => {
         id="search"
         name="search"
         placeholder="Search for a location"
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => inputHandler(e.target.value)}
       />
-      <ul>
-        {list.map((e, index) => (
-          <>
-            {console.log(e)}
-            <LocationListItem
-              city={e.name}
-              state={e.state}
-              country={e.country}
-              index={index}
-              handleClick={handleClick}
-            />
-          </>
-        ))}
-      </ul>
+
+      {displayList && (
+        <ul>
+          {list.map((e, index) => (
+            <>
+              {console.log(e)}
+              <LocationListItem
+                city={e.name}
+                state={e.state}
+                country={e.country}
+                index={index}
+                handleClick={handleClick}
+              />
+            </>
+          ))}
+        </ul>
+      )}
     </>
   );
 };
