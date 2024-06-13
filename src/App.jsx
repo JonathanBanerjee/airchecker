@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { AIR_URL, API_KEY } from "../config";
 
-import SearchLocation from "./components/searchLocation";
+// import SearchLocation from "./components/searchLocation";
+
 // import "./css/App.css";
 import "./css/styles.css";
 import KeyTable from "./components/KeyTable";
 import CityDisplay from "./components/CityDisplay";
+import InvestigateLocation from "./components/InvestigateLocation";
 
 function App() {
   const [city, setCity] = useState("");
@@ -34,7 +36,7 @@ function App() {
   return (
     <>
       {/* Passing reference down as a prop */}
-      <SearchLocation getAir={getAir} getPlaceInfo={getPlaceInfo} />
+      <InvestigateLocation getAir={getAir} getPlaceInfo={getPlaceInfo} />
       <CityDisplay city={city} state={state} country={country} air={air} />
       <KeyTable />
     </>
