@@ -77,14 +77,32 @@ body {
   line-height: 1.25;
 }
 
-ul li {
-  list-style-type: none;
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    ul li {
+      list-style-type: none;
+      color: white;
+    }
+
+    ul li:hover {
+      background-color: #ff8906;
+    }
+  }
 }
 
-ul li:hover {
-  background-color: #006ba6;
-}
+@media only screen and (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    ul li {
+      list-style-type: none;
+      color: black;
+    }
 
+    ul li:hover {
+      background-color: #006ba6;
+      color: white;
+    }
+  }
+}
 .air-subheader {
   display: flex;
   justify-content: center;
