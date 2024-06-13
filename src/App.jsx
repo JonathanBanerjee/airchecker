@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AIR_URL, API_KEY } from "../config";
 
 import SearchLocation from "./components/searchLocation";
