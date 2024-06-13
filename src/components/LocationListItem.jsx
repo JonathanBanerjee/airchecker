@@ -1,9 +1,10 @@
-const LocationListItem = ({ city, state, index, handleClick }) => {
+const LocationListItem = ({ city, state, country, index, handleClick }) => {
   return (
     <>
-      <li
-        onClick={() => handleClick(index)}
-      >{`City: ${city} State: ${state} `}</li>
+      <li onClick={() => handleClick(index)}>{` ${city}, ${
+        state ? state : ``
+      }, ${country}
+      `}</li>
     </>
   );
 };

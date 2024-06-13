@@ -15,7 +15,7 @@ const CityDisplay = ({ city, air }) => {
           return (
             <>
               <div className="air-card" key={index}>
-                <h2 className="air-title">Overall Air Quality for {city} :</h2>
+                <h2 className="air-title">Overall Air Quality for {city}:</h2>
                 <h3 className={`air-subheader ${overallcolour(data.main.aqi)}`}>
                   {data.main.aqi}
                 </h3>
