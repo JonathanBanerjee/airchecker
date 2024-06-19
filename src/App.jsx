@@ -1,3 +1,4 @@
+import "@picocss/pico";
 import { useState } from "react";
 import { AIR_URL, API_KEY } from "../config";
 
