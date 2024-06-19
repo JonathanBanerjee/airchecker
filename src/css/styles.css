@@ -67,9 +67,9 @@ body {
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) ul li {
     list-style-type: none;
-    color: white;
   }
   :root:not([data-theme]) ul li:hover {
+    color: white;
     background-color: #ff8906;
   }
 }
@@ -90,4 +90,4 @@ body {
   width: 100%;
   height: 3vh;
   text-align: center;
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
