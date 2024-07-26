@@ -1,3 +1,4 @@
+import React from "react";
 import {
   carbonmonoxidecolour,
   nitrogendioxidecolour,
@@ -13,7 +14,7 @@ const CityDisplay = ({ city, state, country, air }) => {
       <div className="air-container">
         {air.list.map((data, index) => {
           return (
-            <>
+            <React.Fragment key={index}>
               <div className="air-card" key={index}>
                 <h2 className="air-title">
                   Overall Air Quality for: {city}, {""}
@@ -108,7 +109,7 @@ const CityDisplay = ({ city, state, country, air }) => {
                 air quality index. NH3: min value 0.1 - max value 200 NO: min
                 value 0.1 - max value 100.{" "}
               </p>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
